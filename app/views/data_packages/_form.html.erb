@@ -1,0 +1,17 @@
+<%= form_with(model: data_package, local: true) do |form| %>
+  <% if data_package.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(data_package.errors.count, "error") %> prohibited this data_package from being saved:</h2>
+
+      <ul>
+      <% data_package.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
